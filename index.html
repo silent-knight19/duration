@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duration Formatter</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="card">
+        <header class="header">
+          <div class="badge">HH:MM:SS</div>
+          <h1>Duration Formatter</h1>
+          <p class="subtitle">Convert total seconds into standard time format</p>
+        </header>
+
+        <section class="result-section">
+          <span class="result-label">Formatted Duration</span>
+          <div class="result-display" id="result-display">--:--:--</div>
+        </section>
+
+        <form class="form" id="duration-form" onsubmit="return false;">
+          <div class="field-group">
+            <label for="seconds-input">Duration in Seconds</label>
+            <div class="input-row">
+              <input
+                type="number"
+                id="seconds-input"
+                name="seconds"
+                min="0"
+                step="1"
+                placeholder="Enter seconds (e.g., 5400)"
+                value="5400"
+                required
+              />
+              <button type="submit" id="format-btn" class="btn btn-primary">
+                Format Duration
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <section class="presets-section">
+          <span class="presets-label">Preset Examples</span>
+          <div class="presets-grid">
+            <button type="button" class="preset-btn" data-seconds="2700">
+              <span class="preset-title">45 min</span>
+              <span class="preset-val">2,700s</span>
+            </button>
+            <button type="button" class="preset-btn" data-seconds="3600">
+              <span class="preset-title">60 min</span>
+              <span class="preset-val">3,600s</span>
+            </button>
+            <button type="button" class="preset-btn" data-seconds="5400">
+              <span class="preset-title">90 min</span>
+              <span class="preset-val">5,400s</span>
+            </button>
+            <button type="button" class="preset-btn" data-seconds="7500">
+              <span class="preset-title">125 min</span>
+              <span class="preset-val">7,500s</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
+
